@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
+  <path fill="#0EA5E9" d="M22.5 6h-9a1.5 1.5 0 0 0-1.5 1.5v21a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5v-21A1.5 1.5 0 0 0 22.5 6Z"/>
+  <path fill="#7C3AED" d="M25.5 10.5v15a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5v-15a1.5 1.5 0 0 0-1.5-1.5h-3a1.5 1.5 0 0 0-1.5 1.5ZM4.5 15v6a1.5 1.5 0 0 0 1.5 1.5h3A1.5 1.5 0 0 0 10.5 21v-6a1.5 1.5 0 0 0-1.5-1.5h-3A1.5 1.5 0 0 0 4.5 15Z"/>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        filter: invert(100%);
+      }
+    }
+  </style>
+</svg>

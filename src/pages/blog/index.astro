@@ -1,0 +1,220 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { format } from 'date-fns';
+
+const blogs = [
+  {
+    title: 'The Evolution and Future of Artificial Intelligence',
+    slug: 'evolution-future-artificial-intelligence',
+    publishDate: '2023-11-20',
+    excerpt: 'Exploring the journey of AI from its inception to current advancements, and what the future might hold for this transformative technology.',
+    image: 'https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: true,
+    categories: ['AI', 'Technology']
+  },
+  {
+    title: 'Building Scalable Web Applications with React and Node.js',
+    slug: 'building-scalable-web-applications',
+    publishDate: '2023-10-15',
+    excerpt: 'A comprehensive guide to creating efficient, scalable web applications using React on the frontend and Node.js on the backend.',
+    image: 'https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: false,
+    categories: ['Web Development', 'React', 'Node.js']
+  },
+  {
+    title: 'The Importance of User Experience in Modern Web Design',
+    slug: 'importance-user-experience-web-design',
+    publishDate: '2023-09-05',
+    excerpt: 'Why UX should be at the forefront of every web development project, and how it impacts user engagement and business success.',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: false,
+    categories: ['UX', 'Web Design']
+  },
+  {
+    title: 'Optimizing Performance in React Applications',
+    slug: 'optimizing-performance-react-applications',
+    publishDate: '2023-08-18',
+    excerpt: 'Practical strategies and techniques for improving the performance of your React applications, from code splitting to memoization.',
+    image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: false,
+    categories: ['React', 'Performance', 'JavaScript']
+  },
+  {
+    title: 'Getting Started with TypeScript in 2023',
+    slug: 'getting-started-typescript-2023',
+    publishDate: '2023-07-10',
+    excerpt: 'A beginner-friendly guide to TypeScript, covering the basics, benefits, and best practices for developers new to typed JavaScript.',
+    image: 'https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: false,
+    categories: ['TypeScript', 'JavaScript', 'Web Development']
+  },
+  {
+    title: 'The Future of Web Development: Trends to Watch in 2023',
+    slug: 'future-web-development-trends-2023',
+    publishDate: '2023-06-22',
+    excerpt: 'Exploring emerging technologies and methodologies shaping the future of web development, from AI-driven tools to WebAssembly.',
+    image: 'https://images.pexels.com/photos/176851/pexels-photo-176851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    featured: false,
+    categories: ['Web Development', 'Trends', 'Technology']
+  }
+];
+
+// Get all unique categories
+const allCategories = [...new Set(blogs.flatMap(blog => blog.categories))];
+---
+
+<Layout title="Blog | Ankit Raj" description="Articles and insights on web development, technology, and programming by Ankit Raj.">
+  <section class="pt-32 pb-10 bg-white dark:bg-dark-900">
+    <div class="container-custom">
+      <div class="max-w-3xl mx-auto text-center mb-16 animate-on-scroll">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">My Blog</h1>
+        <p class="text-dark-600 dark:text-dark-300 text-xl">
+          Thoughts, insights, and tutorials on web development, technology, and programming.
+        </p>
+      </div>
+      
+      <!-- Categories -->
+      <div class="mb-12 flex flex-wrap justify-center gap-3 animate-on-scroll">
+        <button class="category-filter active px-4 py-2 rounded-full bg-primary-600 text-white hover:bg-primary-700 transition-colors" data-category="all">
+          All
+        </button>
+        {allCategories.map(category => (
+          <button class="category-filter px-4 py-2 rounded-full bg-dark-100 dark:bg-dark-800 text-dark-800 dark:text-dark-200 hover:bg-primary-600 hover:text-white dark:hover:bg-primary-600 transition-colors" data-category={category}>
+            {category}
+          </button>
+        ))}
+      </div>
+      
+      <!-- Featured Blog -->
+      {blogs.filter(blog => blog.featured).map(featuredBlog => (
+        <div class="mb-16 animate-on-scroll">
+          <a href={`/blog/${featuredBlog.slug}`} class="block group">
+            <div class="card overflow-hidden">
+              <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                <div class="lg:col-span-3 order-2 lg:order-1 p-8">
+                  <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="px-3 py-1 bg-primary-600 text-white rounded-full text-sm font-medium">
+                      Featured
+                    </span>
+                    {featuredBlog.categories.map(category => (
+                      <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm">
+                        {category}
+                      </span>
+                    ))}
+                  </div>
+                  <div class="mb-4 text-sm text-dark-500 dark:text-dark-400">
+                    {format(new Date(featuredBlog.publishDate), 'MMMM dd, yyyy')}
+                  </div>
+                  <h2 class="text-3xl font-bold mb-4 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                    {featuredBlog.title}
+                  </h2>
+                  <p class="text-dark-600 dark:text-dark-300 mb-6 text-lg">
+                    {featuredBlog.excerpt}
+                  </p>
+                  <div class="flex items-center text-primary-600 dark:text-primary-400 font-medium group-hover:translate-x-2 transition-transform duration-300">
+                    Read Article
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="lg:col-span-2 order-1 lg:order-2 relative overflow-hidden h-64 lg:h-auto">
+                  <img 
+                    src={featuredBlog.image} 
+                    alt={featuredBlog.title} 
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))}
+      
+      <!-- Blog Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-grid">
+        {blogs.filter(blog => !blog.featured).map((blog) => (
+          <a href={`/blog/${blog.slug}`} class="group animate-on-scroll" data-categories={blog.categories.join(',')}>
+            <article class="card h-full flex flex-col hover:shadow-xl transition-all duration-300">
+              <div class="relative overflow-hidden">
+                <img 
+                  src={blog.image} 
+                  alt={blog.title} 
+                  class="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-3">
+                  {blog.categories.map(category => (
+                    <span class="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs">
+                      {category}
+                    </span>
+                  ))}
+                </div>
+                <div class="mb-3 text-sm text-dark-500 dark:text-dark-400">
+                  {format(new Date(blog.publishDate), 'MMM dd, yyyy')}
+                </div>
+                <h3 class="text-xl font-bold mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-300">
+                  {blog.title}
+                </h3>
+                <p class="text-dark-600 dark:text-dark-300 mb-6 flex-grow">
+                  {blog.excerpt}
+                </p>
+                <div class="flex items-center text-primary-600 dark:text-primary-400 mt-auto font-medium group-hover:translate-x-2 transition-transform duration-300">
+                  Read More
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Category filtering
+  function setupCategoryFilters() {
+    const categoryButtons = document.querySelectorAll('.category-filter');
+    const blogItems = document.querySelectorAll('#blog-grid > a');
+    
+    categoryButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Update active button
+        categoryButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-600', 'text-white'));
+        categoryButtons.forEach(btn => btn.classList.add('bg-dark-100', 'dark:bg-dark-800', 'text-dark-800', 'dark:text-dark-200'));
+        
+        button.classList.add('active', 'bg-primary-600', 'text-white');
+        button.classList.remove('bg-dark-100', 'dark:bg-dark-800', 'text-dark-800', 'dark:text-dark-200');
+        
+        const selectedCategory = button.getAttribute('data-category');
+        
+        // Filter blog items
+        blogItems.forEach(item => {
+          const categories = item.getAttribute('data-categories')?.split(',') || [];
+          
+          if (selectedCategory === 'all' || categories.includes(selectedCategory)) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  
+  // Initialize on page load
+  document.addEventListener('astro:page-load', setupCategoryFilters);
+  
+  // Also run on first page load
+  document.addEventListener('DOMContentLoaded', setupCategoryFilters);
+</script>
+
+<style>
+  .category-filter.active {
+    @apply bg-primary-600 text-white;
+  }
+</style>
