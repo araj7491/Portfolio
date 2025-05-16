@@ -12,12 +12,12 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Connect",
+    title: "Qconnect",
     description: "A Peer-to-Peer Collaborative Learning Space where students can engage in real-time academic collaboration through peer interaction.",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["HTML", "CSS", "JavaScript", "React", "MongoDB", "Node.js"],
     github: "https://github.com/araj7491/qconnect",
-    demo: "https://qconnect.vercel.app",
+    demo: "https://fancy-sunshine-65bb8b.netlify.app/",
     featured: true
   },
   {
@@ -36,16 +36,16 @@ export const projects: Project[] = [
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/araj7491/portfolio",
-    demo: "https://ankitraj.dev",
+    demo: "https://portfoli0952.netlify.app/",
     featured: false
   },
   {
     id: 4,
     title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with product catalog, cart, and secure payment processing.",
+    description: "A full-featured CRM platform with product catalog, cart, and secure payment processing.",
     image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    github: "https://github.com/araj7491/ecommerce",
+    github: "https://github.com/araj7491/Clydra",
     featured: false
   }
 ];

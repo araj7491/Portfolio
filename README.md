@@ -36,7 +36,7 @@ Hi, I'm **Ankit Raj**, a passionate Full Stack Developer with expertise in build
 
 ## 📂 Projects Featured
 
-### 1. [Connect: A Peer-to-Peer Collaborative Learning Space](https://github.com/araj7491/qconnect)
+### 1. [Qconnect: A Peer-to-Peer Collaborative Learning Space](https://github.com/araj7491/qconnect)
 - **Tech Stack**: React.js, MongoDB, Node.js, HTML, CSS, JavaScript
 - **Overview**: A student-focused platform promoting academic collaboration.
 - **Highlights**: Real-time peer interaction, reputation-based peer matching algorithm.
