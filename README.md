@@ -1,4 +1,3 @@
-
 # Ankit Raj's Portfolio Website
 
 Welcome to my personal portfolio website! This platform is designed to showcase my skills, projects, and blog content in a visually appealing and highly functional manner, ideal for a front-end or full-stack web developer role.

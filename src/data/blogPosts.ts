@@ -93,7 +93,7 @@ AI is not replacing web developers but transforming how they work. By embracing 
 The future of web development lies not in resistance to AI but in learning how to leverage it effectively while maintaining the human creativity and ethical considerations that machines cannot replicate.
     `,
     author: "Ankit Raj",
-    date: "April 15, 2023",
+    date: "April 15, 2025",
     readTime: 5,
     category: "Technology",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -295,7 +295,7 @@ TypeScript transforms React development by providing compile-time safety and bet
 Remember that TypeScript is a tool to help developers, not a goal in itself. Find the right balance of type safety and development speed that works for your team.
     `,
     author: "Ankit Raj",
-    date: "February 28, 2023",
+    date: "February 28, 2025",
     readTime: 8,
     category: "Development",
     image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -307,7 +307,7 @@ Remember that TypeScript is a tool to help developers, not a goal in itself. Fin
     excerpt: "Essential techniques for improving load times and user experience in your web applications.",
     content: "# Optimizing Web Performance\n\nThis is the full content of the performance optimization article...",
     author: "Ankit Raj",
-    date: "January 10, 2023",
+    date: "January 10, 2025",
     readTime: 6,
     category: "Performance",
     image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
