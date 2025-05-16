@@ -41,7 +41,7 @@ Hi, I'm **Ankit Raj**, a passionate Full Stack Developer with expertise in build
 - **Overview**: A student-focused platform promoting academic collaboration.
 - **Highlights**: Real-time peer interaction, reputation-based peer matching algorithm.
 
-### 2. [Coordinaid: A Volunteer Management Platform for NGOs](https://github.com/araj7491/Coordinaid)
+### 2. [Co-ordinaid: A Volunteer Management Platform for NGOs](https://github.com/araj7491/Coordinaid)
 - **Tech Stack**: Java, JDBC, Spring Boot, Spring MVC, ThymeLeaf
 - **Overview**: A platform to manage NGO volunteers and events.
 - **Highlights**: Volunteer sign-ups, event management, and real-time communication.

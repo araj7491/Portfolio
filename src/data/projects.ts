@@ -22,7 +22,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    title: "Coordinaid",
+    title: "Co-ordinaid",
     description: "A comprehensive platform for managing volunteer activities, recruitment, and coordination for NGOs.",
     image: "https://images.pexels.com/photos/6646918/pexels-photo-6646918.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["Java", "JDBC", "Spring Boot", "Spring MVC", "ThymeLeaf"],
