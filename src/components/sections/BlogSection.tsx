@@ -12,7 +12,6 @@ const BlogSection: React.FC = () => {
     threshold: 0.1
   });
   
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   
   useEffect(() => {
@@ -44,12 +43,6 @@ const BlogSection: React.FC = () => {
     }
   };
   
-  const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
-  
-  const filteredPosts = selectedCategory === 'All' 
-    ? blogPosts 
-    : blogPosts.filter(post => post.category === selectedCategory);
-  
   return (
     <section id="blog" className="section" ref={ref}>
       <div className="container mx-auto px-4">
@@ -67,34 +60,15 @@ const BlogSection: React.FC = () => {
             Insights, tutorials and thoughts on web development, design, and technology.
           </p>
         </motion.div>
-        
-        <div className="flex justify-center mb-8 overflow-x-auto pb-2">
-          <div className="flex flex-wrap gap-2 justify-center">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
-                }`}
-                aria-pressed={selectedCategory === category}
-                tabIndex={0}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
+
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post) => (
+          {blogPosts.length > 0 ? (
+            blogPosts.map((post) => (
               <motion.div
                 key={post.id}
                 variants={itemVariants}
@@ -147,7 +121,7 @@ const BlogSection: React.FC = () => {
             ))
           ) : (
             <div className="col-span-full text-center text-slate-500 dark:text-slate-400 py-12">
-              No posts found for this category.
+              No posts found.
             </div>
           )}
         </motion.div>
