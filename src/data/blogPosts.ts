@@ -14,95 +14,100 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "The Impact of AI on Modern Web Development",
-    excerpt: "Exploring how artificial intelligence is revolutionizing the way we build and interact with web applications.",
+    title: "Introduction to Reasoning Models in AI",
+    excerpt: "A beginner-friendly overview of reasoning models in artificial intelligence, with practical code examples.",
     content: `
-# The Impact of AI on Modern Web Development
+# Introduction to Reasoning Models in AI
 
-Artificial intelligence (AI) has dramatically transformed various industries, and web development is no exception. In this article, we'll explore how AI is revolutionizing web development practices and what it means for developers and businesses alike.
+Reasoning models are at the core of artificial intelligence, enabling machines to draw conclusions, make decisions, and solve problems based on available information. In this article, we'll introduce the main types of reasoning in AI, discuss their applications, and provide practical code examples to help you get started.
 
 ---
 
-## Automated Coding Assistance
+## What Are Reasoning Models?
 
-One of the most significant impacts of AI on web development is the emergence of intelligent coding assistants. Tools like GitHub Copilot, powered by OpenAI's technology, can suggest code snippets, complete functions, and even generate entire components based on natural language descriptions.
+Reasoning models in AI are algorithms or systems that simulate human-like thinking to infer new information from known facts. They are essential for tasks such as expert systems, planning, diagnostics, and natural language understanding.
+
+---
+
+## Types of Reasoning in AI
+
+There are several types of reasoning commonly used in AI:
+
+1. **Deductive Reasoning**: Drawing specific conclusions from general rules or premises.
+2. **Inductive Reasoning**: Inferring general rules from specific examples or observations.
+3. **Abductive Reasoning**: Finding the most likely explanation for a set of observations.
+
+---
+
+## Example: Deductive Reasoning with Rules
+
+Let's implement a simple rule-based system in JavaScript that uses deductive reasoning to infer whether a person can drive based on their age.
 
 \`\`\`javascript
-// Example: Ask AI to generate a React component
-// Prompt: "Create a user profile card component with avatar, name, and bio"
+// Define the rules
+const rules = [
+  {
+    condition: (person) => person.age >= 18,
+    conclusion: "can drive"
+  },
+  {
+    condition: (person) => person.age < 18,
+    conclusion: "cannot drive"
+  }
+];
 
-const ProfileCard = ({ user }) => {
-  return (
-    <div className="profile-card">
-      <img 
-        src={user.avatar || '/default-avatar.png'} 
-        alt={user.name} 
-        className="profile-avatar"
-      />
-      <h2 className="profile-name">{user.name}</h2>
-      <p className="profile-bio">{user.bio}</p>
-    </div>
-  );
-};
+// Reasoning function
+function canPersonDrive(person) {
+  for (const rule of rules) {
+    if (rule.condition(person)) {
+      return rule.conclusion;
+    }
+  }
+  return "unknown";
+}
 
-export default ProfileCard;
+// Example usage
+const alice = { name: "Alice", age: 20 };
+console.log(\`\${alice.name} \${canPersonDrive(alice)}\`); // Alice can drive
 \`\`\`
 
-These tools are not replacing developers but enhancing their productivity. By handling routine coding tasks, AI allows developers to focus on more complex problems and creative solutions.
+---
+
+## Example: Inductive Reasoning with Machine Learning
+
+Inductive reasoning is often implemented using machine learning. For example, you can train a model to predict if a person can drive based on age and other features.
+
+\`\`\`python
+# Example using scikit-learn (Python)
+from sklearn.tree import DecisionTreeClassifier
+
+# Training data: [age], can_drive (1 = yes, 0 = no)
+X = [[16], [18], [21], [15], [30]]
+y = [0, 1, 1, 0, 1]
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+# Predict for a new person
+print(model.predict([[17]]))  # Output: [0] (cannot drive)
+\`\`\`
 
 ---
 
-## Design Automation
+## Applications of Reasoning Models
 
-AI-powered design tools are changing how websites are conceptualized and built. Systems can now generate entire layouts, suggest color schemes, and even create custom illustrations based on simple text prompts.
-
-For example, tools like:
-
-- **Figma AI features**: Automatically suggesting layouts and design elements  
-- **Midjourney or DALL-E**: Generating custom images for websites  
-- **Uizard**: Converting sketches into functional UI designs
-
-These advancements democratize design, making it accessible to developers who may not have formal design training.
-
----
-
-## Personalized User Experiences
-
-AI enables websites to deliver highly personalized experiences by analyzing user behavior and preferences. This includes:
-
-- Dynamic content recommendation systems  
-- Personalized navigation paths  
-- Adaptive user interfaces that change based on user behavior  
-- Chatbots and virtual assistants that improve over time
-
----
-
-## Performance Optimization
-
-AI algorithms can identify performance bottlenecks and suggest optimizations for faster loading times and better user experiences:
-
-- Automatically optimizing image sizes and formats  
-- Predicting and preloading resources based on user behavior  
-- Identifying code inefficiencies
-
----
-
-## What This Means for Developers
-
-As AI continues to evolve, the role of web developers is transforming:
-
-1. **Shift in skill requirements**: Greater emphasis on AI integration, prompt engineering, and understanding machine learning principles  
-2. **Focus on uniqueness**: As automation handles standard elements, developers will focus more on creating unique experiences  
-3. **Ethical considerations**: Increased responsibility for ensuring AI implementations are ethical and unbiased  
-4. **Human-AI collaboration**: Learning to effectively partner with AI tools rather than competing against them
+- **Expert Systems**: Medical diagnosis, legal reasoning, and troubleshooting.
+- **Natural Language Processing**: Understanding and generating human language.
+- **Robotics**: Planning and decision-making in dynamic environments.
+- **Recommendation Systems**: Suggesting products or actions based on user behavior.
 
 ---
 
 ## Conclusion
 
-AI is not replacing web developers but transforming how they work. By embracing these new tools and approaches, developers can enhance their productivity, create more personalized experiences, and focus on solving more complex and interesting problems.
+Reasoning models are fundamental to building intelligent systems that can make decisions and solve problems. By understanding and applying deductive, inductive, and abductive reasoning, you can create AI solutions that go beyond simple pattern recognition and truly "think" about the information they process.
 
-The future of web development lies not in resistance to AI but in learning how to leverage it effectively while maintaining the human creativity and ethical considerations that machines cannot replicate.
+Start experimenting with simple rule-based systems and machine learning models to see reasoning in action!
     `,
     author: "Ankit Raj",
     date: "April 15, 2025",
