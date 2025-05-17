@@ -21,12 +21,14 @@ export const blogPosts: BlogPost[] = [
 
 Reasoning models are at the core of artificial intelligence, enabling machines to draw conclusions, make decisions, and solve problems based on available information. In this article, we'll introduce the main types of reasoning in AI, discuss their applications, and provide practical code examples to help you get started.
 
-  
+---
+
 ## What Are Reasoning Models?
 
 Reasoning models in AI are algorithms or systems that simulate human-like thinking to infer new information from known facts. They are essential for tasks such as expert systems, planning, diagnostics, and natural language understanding.
 
-  
+---
+
 ## Types of Reasoning in AI
 
 There are several types of reasoning commonly used in AI:
@@ -35,7 +37,8 @@ There are several types of reasoning commonly used in AI:
 2. **Inductive Reasoning**: Inferring general rules from specific examples or observations.
 3. **Abductive Reasoning**: Finding the most likely explanation for a set of observations.
 
-  
+---
+
 ## Example: Deductive Reasoning with Rules
 
 Let's implement a simple rule-based system in JavaScript that uses deductive reasoning to infer whether a person can drive based on their age.
@@ -68,7 +71,8 @@ const alice = { name: "Alice", age: 20 };
 console.log(\`\${alice.name} \${canPersonDrive(alice)}\`); // Alice can drive
 \`\`\`
 
-  
+---
+
 ## Example: Inductive Reasoning with Machine Learning
 
 Inductive reasoning is often implemented using machine learning. For example, you can train a model to predict if a person can drive based on age and other features.
@@ -88,7 +92,8 @@ model.fit(X, y)
 print(model.predict([[17]]))  # Output: [0] (cannot drive)
 \`\`\`
 
-  
+---
+
 ## Applications of Reasoning Models
 
 - **Expert Systems**: Medical diagnosis, legal reasoning, and troubleshooting.
@@ -96,7 +101,8 @@ print(model.predict([[17]]))  # Output: [0] (cannot drive)
 - **Robotics**: Planning and decision-making in dynamic environments.
 - **Recommendation Systems**: Suggesting products or actions based on user behavior.
 
-  
+---
+
 ## Conclusion
 
 Reasoning models are fundamental to building intelligent systems that can make decisions and solve problems. By understanding and applying deductive, inductive, and abductive reasoning, you can create AI solutions that go beyond simple pattern recognition and truly "think" about the information they process.
@@ -119,7 +125,8 @@ Start experimenting with simple rule-based systems and machine learning models t
 
 TypeScript has become an essential tool for building large-scale React applications. In this article, we'll explore best practices for creating maintainable and scalable React applications with TypeScript.
 
-  
+---
+
 ## Why TypeScript for React Projects?
 
 TypeScript provides static type checking that helps catch errors during development rather than runtime. This is particularly valuable as React applications grow in complexity.
@@ -131,7 +138,8 @@ Key benefits include:
 3. Clearer component props documentation  
 4. Reduced runtime errors
 
-  
+---
+
 ## Project Structure
 
 A well-organized project structure is crucial for scalability. Here's a recommended approach:
@@ -151,7 +159,8 @@ src/
 └── App.tsx            # Main application component
 \`\`\`
 
-  
+---
+
 ## Type Definitions
 
 Proper typing is essential for maintainable React applications:
@@ -186,7 +195,8 @@ const UserProfile: React.FC<UserProfileProps> = ({
 };
 \`\`\`
 
-  
+---
+
 ## Custom Hooks with TypeScript
 
 Custom hooks benefit greatly from TypeScript:
@@ -230,7 +240,8 @@ function useFetch<T>(url: string): UseFetchResult<T> {
 }
 \`\`\`
 
-  
+---
+
 ## Context API with TypeScript
 
 TypeScript makes React's Context API much more powerful:
@@ -273,7 +284,8 @@ export const useAuth = (): AuthContextType => {
 };
 \`\`\`
 
-  
+---
+
 ## Performance Optimization
 
 TypeScript can help with memoization patterns:
@@ -305,7 +317,8 @@ const ExpensiveComponent: React.FC<ExpensiveComponentProps> = memo(
 );
 \`\`\`
 
-  
+---
+
 ## Conclusion
 
 TypeScript transforms React development by providing compile-time safety and better developer experience. By following these patterns and best practices, you can create React applications that scale with your team and business needs.
@@ -328,7 +341,8 @@ Remember that TypeScript is a tool to help developers, not a goal in itself. Fin
 
 Performance is a crucial aspect of modern web development. With users expecting fast, seamless experiences, optimizing your web application for modern browsers is essential. In this article, we’ll explore proven strategies to improve load times, reduce resource consumption, and deliver smooth user experiences.
 
-  
+---
+
 ## Why Web Performance Matters
 
 Modern users have little patience for slow-loading websites. Even a slight delay in performance can lead to increased bounce rates and lost conversions.
@@ -340,7 +354,8 @@ Modern users have little patience for slow-loading websites. Even a slight delay
 - Better mobile experiences  
 - Increased user retention and satisfaction
 
-  
+---
+
 ## Efficient Asset Loading
 
 Minimizing and optimizing assets is one of the easiest ways to enhance performance.
@@ -352,21 +367,24 @@ Minimizing and optimizing assets is one of the easiest ways to enhance performan
 - Lazy loading offscreen images and non-critical content  
 - Optimizing font delivery by only including necessary font weights and using font-display strategies
 
-  
+---
+
 ## Code Splitting and Lazy Loading
 
 As applications grow in size, loading all JavaScript upfront can hurt performance. Code splitting allows your application to load only the necessary code for a particular route or feature, improving initial load times.
 
 Implementing lazy loading for components and modules ensures that less critical parts of the application are loaded on demand, enhancing responsiveness and user experience.
 
-  
+---
+
 ## Leveraging Browser Caching
 
 Browser caching helps reduce redundant downloads by storing previously fetched resources locally. Setting cache headers and using versioned file names ensures users always get the latest versions when needed, without unnecessarily re-downloading unchanged assets.
 
 Service workers can further enhance caching strategies by enabling offline access and caching dynamic API responses.
 
-  
+---
+
 ## Optimize Critical Rendering Path
 
 The critical rendering path includes all steps the browser takes to render content to the screen. Optimizing this path ensures content appears quickly.
@@ -378,28 +396,32 @@ This can be achieved by:
 - Reducing the number of render-blocking resources  
 - Prioritizing fast delivery of visible elements
 
-  
+---
+
 ## Minimize Main Thread Work
 
 The main thread is responsible for executing JavaScript, processing user events, and painting the UI. Heavy main thread usage can lead to sluggish performance and input delays.
 
 Reducing unnecessary scripts, optimizing layout and reflows, and delegating expensive computations to Web Workers help ensure smoother interactions and improved responsiveness.
 
-  
+---
+
 ## Use Modern JavaScript and Delivery Techniques
 
 Modern browsers support features that can significantly improve loading and execution efficiency. Serving ES modules, eliminating unused code through tree shaking, and generating differential bundles for modern and legacy browsers enhance compatibility and performance.
 
 Adopting HTTP/2 or HTTP/3 protocols can also reduce latency and allow multiple resources to load concurrently over a single connection.
 
-  
+---
+
 ## Monitor and Measure Performance
 
 Performance optimization is an ongoing process. Regularly auditing your application using tools like Lighthouse, Chrome DevTools, and WebPageTest helps identify bottlenecks and track improvements.
 
 Paying attention to Core Web Vitals—such as Largest Contentful Paint (LCP), First Input Delay (FID), and Cumulative Layout Shift (CLS)—provides valuable insight into real user experience and guides optimization efforts.
 
-  
+---
+
 ## Conclusion
 
 Optimizing web performance for modern browsers requires a holistic approach. From efficient asset handling and lazy loading to advanced caching and code-splitting techniques, every decision impacts the end-user experience.
