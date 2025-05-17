@@ -79,76 +79,78 @@ const BlogSection: React.FC = () => {
                     ? 'bg-blue-600 text-white'
                     : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600'
                 }`}
+                aria-pressed={selectedCategory === category}
+                tabIndex={0}
               >
                 {category}
               </button>
             ))}
           </div>
         </div>
-        
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={controls}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {filteredPosts.map((post) => (
-            <motion.div
-              key={post.id}
-              variants={itemVariants}
-              className="card bg-white dark:bg-slate-800 group cursor-pointer"
-              onClick={() => setSelectedPost(post)}
-            >
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                {post.featured && (
-                  <div className="absolute top-3 left-3">
-                    <span className="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full">
-                      Featured
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map((post) => (
+              <motion.div
+                key={post.id}
+                variants={itemVariants}
+                className="card bg-white dark:bg-slate-800 group cursor-pointer"
+                onClick={() => setSelectedPost(post)}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {post.featured && (
+                    <div className="absolute top-3 left-3">
+                      <span className="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full">
+                        Featured
+                      </span>
+                    </div>
+                  )}
+                  <div className="absolute top-3 right-3">
+                    <span className="inline-block px-3 py-1 bg-slate-900/70 text-white text-xs font-medium rounded-full">
+                      {post.category}
                     </span>
                   </div>
-                )}
-                <div className="absolute top-3 right-3">
-                  <span className="inline-block px-3 py-1 bg-slate-900/70 text-white text-xs font-medium rounded-full">
-                    {post.category}
-                  </span>
                 </div>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-3">
-                  <span>{post.date}</span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1">
-                    <Clock size={14} />
-                    {post.readTime} min read
-                  </span>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 mb-3">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span className="flex items-center gap-1">
+                      <Clock size={14} />
+                      {post.readTime} min read
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm font-medium">{post.author}</span>
+                    <button className="text-blue-600 dark:text-blue-500 flex items-center gap-1 text-sm hover:underline">
+                      Read More
+                      <ChevronRight size={16} />
+                    </button>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors">
-                  {post.title}
-                </h3>
-                
-                <p className="text-slate-600 dark:text-slate-400 mb-4 line-clamp-2">
-                  {post.excerpt}
-                </p>
-                
-                <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium">{post.author}</span>
-                  <button className="text-blue-600 dark:text-blue-500 flex items-center gap-1 text-sm hover:underline">
-                    Read More
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))
+          ) : (
+            <div className="col-span-full text-center text-slate-500 dark:text-slate-400 py-12">
+              No posts found for this category.
+            </div>
+          )}
         </motion.div>
-        
         {/* Blog post modal */}
         {selectedPost && (
           <BlogPostModal
