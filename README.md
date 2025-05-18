@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! This platform is designed to showcase my skills, projects, and blog content in a visually appealing and highly functional manner, ideal for a front-end or full-stack web developer role.
 
 ## 🔗 Live Demo
-🌐 [Visit Portfolio](https://portfoli0952.netlify.app/)
+🌐 [Visit Portfolio](https://portfolio-lac-nu-19.vercel.app/)
 
 ---
 
