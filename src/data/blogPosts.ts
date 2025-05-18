@@ -430,9 +430,9 @@ By following these best practices and continuously monitoring performance metric
     `,
     author: "Ankit Raj",
     date: "January 10, 2025",
-    readTime: 6,
+    readTime: 3,
     category: "Performance",
     image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
-    featured: false
+    featured: true
   }
 ];

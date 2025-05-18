@@ -36,8 +36,8 @@ export const projects: Project[] = [
     image: "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=800",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     github: "https://github.com/araj7491/portfolio",
-    demo: "https://portfoli0952.netlify.app/",
-    featured: false
+    demo: "https://portfolio-lac-nu-19.vercel.app/",
+    featured: true
   },
   {
     id: 4,
