@@ -46,6 +46,7 @@ export const projects: Project[] = [
     image: "https://images.pexels.com/photos/7709146/pexels-photo-7709146.jpeg",
     tags: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/araj7491/Clydra",
+    demo: "https://clydra.netlify.app/",
     featured: true
   }
 ];
