@@ -38,14 +38,5 @@ export const projects: Project[] = [
     github: "https://github.com/araj7491/portfolio",
     demo: "https://portfolio-lac-nu-19.vercel.app/",
     featured: true
-  },
-  {
-    id: 4,
-    title: "E-Commerce Platform",
-    description: "A full-featured CRM platform with product catalog, cart, and secure payment processing.",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
-    github: "https://github.com/araj7491/Clydra",
-    featured: false
   }
 ];
