@@ -41,11 +41,11 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "CRM Model",
-    description: "A full-featured CRM platform with product catalog, cart, and secure payment processing.",
-    image: "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+    title: "Clydra",
+    description: "A full-featured CRM platform model with all the features like projects, analytics and collaboration along with pricing, products and dashboard.",
+    image: "https://images.pexels.com/photos/7709146/pexels-photo-7709146.jpeg",
+    tags: ["React", "Node.js", "Express", "MongoDB"],
     github: "https://github.com/araj7491/Clydra",
-    featured: false
+    featured: true
   }
 ];
