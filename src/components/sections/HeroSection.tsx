@@ -146,7 +146,7 @@ const HeroSection: React.FC = () => {
             <div className="relative">
               <div className="w-60 h-60 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white dark:border-slate-800 shadow-lg">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D5603AQFgoIu3376J2g/profile-displayphoto-shrink_400_400/B56ZZZfdR2GoAk-/0/1745258141323?e=1752710400&v=beta&t=MTd7HbIIpUivukh-XlmjHjPR4HQ2tgEmaTFVvnWQHos"
+                  src="/hero.jpg"
                   alt="Computer Science"
                   className="w-full h-full object-cover"
                 />
