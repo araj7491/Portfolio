@@ -43,7 +43,7 @@ const HeroSection: React.FC = () => {
   const roleTexts = [
     "Full Stack Developer",
     "React.js Expert",
-    "Node.js Developer",
+    "Django Developer",
     "UI/UX Enthusiast"
   ];
   

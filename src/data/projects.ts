@@ -41,12 +41,12 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Clydra",
-    description: "A full-featured CRM platform model with all the features like projects, analytics and collaboration along with pricing, products and dashboard.",
-    image: "https://images.pexels.com/photos/7709146/pexels-photo-7709146.jpeg",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
-    github: "https://github.com/araj7491/Clydra",
-    demo: "https://clydra.netlify.app/",
+    title: "FreshGuard",
+    description: "FreshGuard is a robust web application designed to assist grocery retailers in managing product expiry dates, reducing food waste, and optimizing inventory operations.",
+    image: "https://images.pexels.com/photos/8475203/pexels-photo-8475203.jpeg",
+    tags: ["React", "Node.js", "PostgreSQL"],
+    github: "https://github.com/araj7491/expiry-aware-grocer",
+    demo: "https://freshguard-app.netlify.app/",
     featured: true
   }
 ];
