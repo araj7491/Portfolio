@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, Mail, MessageSquare, MapPin, Check, AlertTriangle, Github, Linkedin } from 'lucide-react';
+import { Send, Mail, MessageSquare, MapPin, Check, AlertTriangle, Github, Linkedin, Download } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
 interface FormData {
@@ -260,6 +260,17 @@ const ContactSection: React.FC = () => {
                     className="p-3 bg-slate-200 dark:bg-slate-700 rounded-full text-slate-700 dark:text-slate-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
                     <Linkedin size={20} />
+                  </a>
+                </div>
+                
+                <div className="mt-6">
+                  <a 
+                    href="/Ankit_Raj-Resume.pdf"
+                    download="Ankit_Raj-Resume.pdf"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                  >
+                    <Download size={18} />
+                    Download Resume
                   </a>
                 </div>
               </div>

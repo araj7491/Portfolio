@@ -21,6 +21,7 @@ Hi, I'm **Ankit Raj**, a passionate Full Stack Developer specializing in buildin
 - 🌓 **Light/Dark Theme Toggle**
 - 📝 **Blog Section** featuring an article on **Artificial Intelligence**
 - 📬 **Contact Form** with real-time chatbox functionality (messages delivered directly to my email)
+- 📄 **Resume Download** available in header and contact section
 - 📱 **Fully Responsive Design**
 - ⚙️ **Functional, Modular Components**
 - 🎨 **Modern Animations & Graphics**

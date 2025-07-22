@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Moon, Sun } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Moon, Sun, Download } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Header: React.FC = () => {
@@ -65,6 +65,16 @@ const Header: React.FC = () => {
             )}
           </button>
           
+          {/* Resume Download */}
+          <a
+            href="/Ankit_Raj-Resume.pdf"
+            download="Ankit_Raj-Resume.pdf"
+            className="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-md transition-colors"
+          >
+            <Download size={16} />
+            Resume
+          </a>
+          
           {/* Social Links */}
           <div className="flex items-center space-x-4">
             <a
@@ -122,6 +132,15 @@ const Header: React.FC = () => {
               
               <div className="flex items-center justify-between px-4 pt-2 border-t border-slate-200 dark:border-slate-700">
                 <div className="flex items-center space-x-4">
+                  <a
+                    href="/Ankit_Raj-Resume.pdf"
+                    download="Ankit_Raj-Resume.pdf"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-md transition-colors"
+                  >
+                    <Download size={16} />
+                    Resume
+                  </a>
                   <a
                     href="https://github.com/araj7491"
                     target="_blank"

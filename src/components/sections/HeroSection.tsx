@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Linkedin, ArrowDown, Briefcase } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, Briefcase, Download } from 'lucide-react';
 import TypeWriter from '../ui/TypeWriter';
 
 const HeroSection: React.FC = () => {
@@ -109,6 +109,14 @@ const HeroSection: React.FC = () => {
                 className="btn btn-outline flex items-center gap-2 dark:text-white"
               >
                 View Projects
+              </a>
+              <a 
+                href="/Ankit_Raj-Resume.pdf"
+                download="Ankit_Raj-Resume.pdf"
+                className="btn btn-outline flex items-center gap-2 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20"
+              >
+                <Download size={18} />
+                Download Resume
               </a>
             </motion.div>
             
