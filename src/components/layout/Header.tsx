@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Moon, Sun, Download } from 'lucide-react';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Header: React.FC = () => {
@@ -64,38 +64,6 @@ const Header: React.FC = () => {
               <Sun size={20} className="text-slate-300" />
             )}
           </button>
-          
-          {/* Resume Download */}
-          <a
-            href="/Ankit_Raj-Resume.pdf"
-            download="Ankit_Raj-Resume.pdf"
-            className="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-md transition-colors"
-          >
-            <Download size={16} />
-            Resume
-          </a>
-          
-          {/* Social Links */}
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://github.com/araj7491"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-            >
-              <Github size={20} />
-            </a>
-            <a
-              href="https://linkedin.com/in/ankitraj"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-            >
-              <Linkedin size={20} />
-            </a>
-          </div>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -130,36 +98,7 @@ const Header: React.FC = () => {
                 </a>
               ))}
               
-              <div className="flex items-center justify-between px-4 pt-2 border-t border-slate-200 dark:border-slate-700">
-                <div className="flex items-center space-x-4">
-                  <a
-                    href="/Ankit_Raj-Resume.pdf"
-                    download="Ankit_Raj-Resume.pdf"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-md transition-colors"
-                  >
-                    <Download size={16} />
-                    Resume
-                  </a>
-                  <a
-                    href="https://github.com/araj7491"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-                  >
-                    <Github size={20} />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/ankitraj"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                </div>
+              <div className="flex items-center justify-end px-4 pt-2 border-t border-slate-200 dark:border-slate-700">
                 
                 {/* Theme Toggle */}
                 <button 

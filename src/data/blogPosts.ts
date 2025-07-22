@@ -14,10 +14,10 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Introduction to Reasoning Models in AI",
+    title: "Introduction to Reasoning Models in Artificial Intelligence",
     excerpt: "A beginner-friendly overview of reasoning models in artificial intelligence, with practical code examples.",
     content: `
-# Introduction to Reasoning Models in AI
+# Introduction to Reasoning Models in Artificial Intelligence
 
 Reasoning models are at the core of artificial intelligence, enabling machines to draw conclusions, make decisions, and solve problems based on available information. In this article, we'll introduce the main types of reasoning in AI, discuss their applications, and provide practical code examples to help you get started.
 

@@ -66,12 +66,6 @@ const HeroSection: React.FC = () => {
         >
           {/* Text Content */}
           <motion.div variants={itemVariants} className="order-2 md:order-1">
-            <motion.span 
-              variants={itemVariants}
-              className="inline-block px-4 py-1 mb-4 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium"
-            >
-              Welcome to my portfolio
-            </motion.span>
             
             <motion.h1 
               variants={itemVariants}

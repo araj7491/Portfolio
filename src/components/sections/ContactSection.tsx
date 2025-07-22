@@ -177,14 +177,14 @@ const ContactSection: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="grid grid-cols-1 lg:grid-cols-5 gap-8"
+          className="flex flex-col lg:flex-row gap-8"
         >
           {/* Contact info */}
           <motion.div 
             variants={itemVariants}
-            className="lg:col-span-2 space-y-6"
+            className="lg:w-2/5 flex flex-col"
           >
-            <div className="glass card p-6">
+            <div className="glass card p-6 flex-1">
               <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
               
               <div className="space-y-4">
@@ -261,33 +261,24 @@ const ContactSection: React.FC = () => {
                   >
                     <Linkedin size={20} />
                   </a>
-                </div>
-                
-                <div className="mt-6">
                   <a 
                     href="/Ankit_Raj-Resume.pdf"
                     download="Ankit_Raj-Resume.pdf"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    aria-label="Download Resume"
                   >
                     <Download size={18} />
-                    Download Resume
+                    Resume
                   </a>
                 </div>
               </div>
-            </div>
-            
-            <div className="glass card p-6">
-              <h3 className="text-xl font-semibold mb-3">Response Time</h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                I typically respond to messages within 24-48 hours. For urgent inquiries, please mention "Urgent" in the subject line.
-              </p>
             </div>
           </motion.div>
           
           {/* Contact form */}
           <motion.div 
             variants={itemVariants}
-            className="lg:col-span-3"
+            className="lg:w-3/5"
           >
             <div className="glass card p-6">
               <h3 className="text-xl font-semibold mb-6">Send a Message</h3>
@@ -429,6 +420,12 @@ const ContactSection: React.FC = () => {
                   </button>
                 </div>
               </form>
+              
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
+                  <span className="font-medium">*</span> I typically respond to messages within 24-48 hours. For urgent inquiries, please mention "Urgent" in the subject line.
+                </p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
