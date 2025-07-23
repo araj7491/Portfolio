@@ -74,6 +74,14 @@ const BlogSection: React.FC = () => {
                 variants={itemVariants}
                 className="rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl bg-white dark:bg-slate-800 group cursor-pointer"
                 onClick={() => setSelectedPost(post)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedPost(post);
+                  }
+                }}
               >
                 <div className="relative h-48 overflow-hidden">
                   <img 
@@ -100,7 +108,7 @@ const BlogSection: React.FC = () => {
                     <span>•</span>
                     <span className="flex items-center gap-1">
                       <Clock size={14} />
-                      {post.readTime} min read
+                      {post.readTime}
                     </span>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-500 transition-colors">

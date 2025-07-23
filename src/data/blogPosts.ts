@@ -5,7 +5,7 @@ export interface BlogPost {
   content: string;
   author: string;
   date: string;
-  readTime: number;
+  readTime: string;
   category: string;
   image: string;
   featured: boolean;
@@ -111,7 +111,7 @@ Start experimenting with simple rule-based systems and machine learning models t
     `,
     author: "Ankit Raj",
     date: "April 15, 2025",
-    readTime: 5,
+    readTime: "5 min read",
     category: "Technology",
     image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
     featured: true
@@ -327,7 +327,7 @@ Remember that TypeScript is a tool to help developers, not a goal in itself. Fin
     `,
     author: "Ankit Raj",
     date: "February 28, 2025",
-    readTime: 8,
+    readTime: "8 min read",
     category: "Development",
     image: "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=800",
     featured: true
@@ -430,7 +430,7 @@ By following these best practices and continuously monitoring performance metric
     `,
     author: "Ankit Raj",
     date: "January 10, 2025",
-    readTime: 3,
+    readTime: "3 min read",
     category: "Performance",
     image: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800",
     featured: true
