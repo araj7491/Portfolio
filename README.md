@@ -2,11 +2,28 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and TailwindCSS. Features a clean design with dark/light theme toggle, project showcase, blog section, and contact form with EmailJS integration.
 
-## → Live Demo
+## Hi, I'm Ankit Raj
+
+**Full-Stack Developer | Lifelong Learner**
+
+### ➡️ About Me
+
+- Software Developer at Ralakde Automation
+- B.Tech in Computer Science, NIET Greater Noida  
+- Passionate about building impactful web applications  
+- Experienced with the MERN stack, Django and Django REST Framework
+- Certified Zero Trust Cyber Associate (Zscaler)  
+- Former Chegg Subject Matter Expert (Physics)
+
+### ➡️ What Drives Me
+
+I enjoy transforming ideas into real-world solutions, learning new technologies, and collaborating with others to create meaningful digital experiences. I believe in continuous growth and love tackling new challenges—whether it's in code or in life.
+
+## ➡️ Live Demo
 
 [View Portfolio](https://portfolio-lac-nu-19.vercel.app/)
 
-## → Features
+## ➡️ Features
 
 - **Theme Toggle** - Light/Dark mode with smooth transitions
 - **Responsive Design** - Optimized for all devices
@@ -16,7 +33,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Smooth Animations** - Framer Motion powered interactions
 - **Resume Download** - Direct PDF download functionality
 
-## → Tech Stack
+## ➡️ Tech Stack
 
 - **Frontend:** React 18, TypeScript, TailwindCSS
 - **Animations:** Framer Motion
@@ -24,7 +41,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - **Build Tool:** Vite
 - **Deployment:** Vercel
 
-## → Project Structure
+## ➡️ Project Structure
 
 ```
 src/
@@ -37,7 +54,7 @@ src/
 └── config/              # EmailJS configuration
 ```
 
-## → Getting Started
+## ➡️ Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -66,7 +83,7 @@ src/
    http://localhost:5173
    ```
 
-## → Configuration
+## ➡️ Configuration
 
 ### EmailJS Setup
 
@@ -81,7 +98,7 @@ src/
    };
    ```
 
-## → Deployment
+## ➡️ Deployment
 
 ### Vercel (Recommended)
 
@@ -96,7 +113,7 @@ npm run preview  # Preview production build
 npm run lint     # Run ESLint
 ```
 
-## → Customization
+## ➡️ Customization
 
 ### Adding Projects
 Edit `src/data/projects.ts`:
@@ -130,11 +147,11 @@ export const blogPosts: BlogPost[] = [
 ];
 ```
 
-## → License
+## ➡️ License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## → Contact
+## ➡️ Contact
 
 - **Email:** [araj7491@gmail.com](mailto:araj7491@gmail.com)
 - **LinkedIn:** [Ankit Raj](https://www.linkedin.com/in/ankit-raj-3594b6237/)
