@@ -1,122 +1,142 @@
-# Ankit Raj's Portfolio Website
+# Ankit Raj - Portfolio Website
 
-Welcome to my personal portfolio website! This platform showcases my skills, projects, and blog content in a modern, responsive, and interactive manner—ideal for front-end and full-stack web development roles.
+A modern, responsive portfolio website built with React, TypeScript, and TailwindCSS. Features a clean design with dark/light theme toggle, project showcase, blog section, and contact form with EmailJS integration.
 
----
+## → Live Demo
 
-## 🚀 Live Demo
+[View Portfolio](https://portfolio-lac-nu-19.vercel.app/)
 
-🌐 [View Portfolio](https://portfolio-lac-nu-19.vercel.app/)
+## → Features
 
----
+- **Theme Toggle** - Light/Dark mode with smooth transitions
+- **Responsive Design** - Optimized for all devices
+- **Project Showcase** - Detailed project cards with live demos
+- **Blog Section** - Technical articles with markdown support
+- **Contact Form** - EmailJS integration for direct email delivery
+- **Smooth Animations** - Framer Motion powered interactions
+- **Resume Download** - Direct PDF download functionality
 
-## 👨‍💻 About Me
+## → Tech Stack
 
-Hi, I'm **Ankit Raj**, a passionate Full Stack Developer specializing in building dynamic, visually captivating web applications. This portfolio reflects my technical expertise, creativity, and commitment to delivering high-quality solutions. Explore my projects, blog, and more below.
-
----
-
-## ✨ Features
-
-- 🌓 **Light/Dark Theme Toggle**
-- 📝 **Blog Section** featuring an article on **Artificial Intelligence**
-- 📬 **Contact Form** with real-time chatbox functionality (messages delivered directly to my email)
-- 📄 **Resume Download** available in header and contact section
-- 📱 **Fully Responsive Design**
-- ⚙️ **Functional, Modular Components**
-- 🎨 **Modern Animations & Graphics**
-- 📚 **Project Showcase** with detailed write-ups
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React.js, TypeScript, HTML, CSS, TailwindCSS
-- **Backend:** Node.js (for form handling), Email.js (or similar)
-- **Styling & Effects:** TailwindCSS, CSS Animations, Modern UI libraries
+- **Frontend:** React 18, TypeScript, TailwindCSS
+- **Animations:** Framer Motion
+- **Email Service:** EmailJS
+- **Build Tool:** Vite
 - **Deployment:** Vercel
 
----
+## → Project Structure
 
-## 📂 Featured Projects
+```
+src/
+├── components/
+│   ├── layout/          # Header, Footer
+│   ├── sections/        # Hero, Projects, Blog, Contact
+│   └── ui/              # Cursor, TypeWriter, BlogPostModal
+├── contexts/            # Theme context
+├── data/                # Projects and blog data
+└── config/              # EmailJS configuration
+```
 
-### [Qconnect: A Peer-to-Peer Collaborative Learning Space](https://github.com/araj7491/qconnect)
-- **Stack:** React.js, MongoDB, Node.js, HTML, CSS, JavaScript
-- **Overview:** A student-focused platform promoting academic collaboration.
-- **Highlights:** Real-time peer interaction, reputation-based peer matching algorithm.
+## → Getting Started
 
-### [Co-ordinaid: Volunteer Management Platform for NGOs](https://github.com/araj7491/Coordinaid)
-- **Stack:** Java, JDBC, Spring Boot, Spring MVC, ThymeLeaf
-- **Overview:** Platform to manage NGO volunteers and events.
-- **Highlights:** Volunteer sign-ups, event management, real-time communication.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
----
+### Installation
 
-## ✉️ Contact
-
-- **Email:** [araj7491@gmail.com](mailto:araj7491@gmail.com)
-- **LinkedIn:** [Ankit Raj](https://www.linkedin.com/in/ankit-raj-3594b6237/)
-- **GitHub:** [araj7491](https://github.com/araj7491)
-- **Phone:** +91-7992422871
-
----
-
-## 📝 Blog Sample
-
-### Artificial Intelligence: Transforming the Digital Age
-
-> Artificial Intelligence (AI) is revolutionizing industries across the globe. From automating routine tasks to enabling advanced analytics, AI is shaping the future of technology and society. As a web developer, incorporating AI-driven features such as smart recommendations, predictive search, and chatbots into modern websites enhances user engagement and efficiency...
-
-_Read the full article in the Blog section on the website._
-
----
-
-## 🛠️ Getting Started Locally
-
-1. **Clone the repository:**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/araj7491/Portfolio.git
    cd Portfolio
    ```
-2. **Install dependencies:**
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
-3. **Run the development server:**
+
+3. **Start development server**
    ```bash
-   npm start
+   npm run dev
    ```
-4. **Open in your browser:**
-   [http://localhost:3000](http://localhost:3000)
 
----
-
-## 🚀 Deployment
-
-This project is deployed on **Vercel**. To deploy your own version:
-
-1. Fork this repository to your GitHub account.
-2. Go to [Vercel](https://vercel.com/) and import your forked repository.
-3. Set the build command to:
-   ```bash
-   npm run build
+4. **Open in browser**
    ```
-4. Set the output directory to:
-   ```bash
-   dist/
+   http://localhost:5173
    ```
-5. Deploy and enjoy your live portfolio!
 
----
+## → Configuration
 
-## 📄 License
+### EmailJS Setup
 
-This project is open-source and available under the [MIT License](LICENSE).
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Set up your email service and template
+3. Update `src/config/emailjs.ts` with your credentials:
+   ```typescript
+   export const EMAILJS_CONFIG = {
+     SERVICE_ID: 'your_service_id',
+     TEMPLATE_ID: 'your_template_id', 
+     USER_ID: 'your_user_id'
+   };
+   ```
 
----
+## → Deployment
 
-## 🙏 Acknowledgements
+### Vercel (Recommended)
 
-Special thanks to the open-source community and all the tools that made building this portfolio possible.
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy with default settings
 
----
+### Build Commands
+```bash
+npm run build    # Production build
+npm run preview  # Preview production build
+npm run lint     # Run ESLint
+```
+
+## → Customization
+
+### Adding Projects
+Edit `src/data/projects.ts`:
+```typescript
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: "Project Name",
+    description: "Project description",
+    image: "image_url",
+    tags: ["React", "TypeScript"],
+    github: "github_url",
+    demo: "demo_url",
+    featured: true
+  }
+];
+```
+
+### Adding Blog Posts
+Edit `src/data/blogPosts.ts`:
+```typescript
+export const blogPosts: BlogPost[] = [
+  {
+    id: 1,
+    title: "Blog Title",
+    excerpt: "Blog excerpt",
+    content: "Markdown content",
+    date: "2024-01-01",
+    readTime: "5 min read"
+  }
+];
+```
+
+## → License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## → Contact
+
+- **Email:** [araj7491@gmail.com](mailto:araj7491@gmail.com)
+- **LinkedIn:** [Ankit Raj](https://www.linkedin.com/in/ankit-raj-3594b6237/)
+- **GitHub:** [araj7491](https://github.com/araj7491)
+- **Portfolio:** [https://portfolio-lac-nu-19.vercel.app/](https://portfolio-lac-nu-19.vercel.app/)
