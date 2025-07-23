@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Github, Linkedin, ArrowDown, Briefcase, Download } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, Download, MessageSquare } from 'lucide-react';
 import TypeWriter from '../ui/TypeWriter';
 
 const HeroSection: React.FC = () => {
@@ -93,21 +93,21 @@ const HeroSection: React.FC = () => {
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center md:justify-start">
               <a 
                 href="#contact" 
-                className="btn btn-primary flex items-center justify-center gap-2 w-full sm:w-auto"
+                className="px-6 py-2 rounded-md transition-all duration-300 font-medium bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center gap-2 w-full sm:w-auto"
               >
-                <Briefcase size={18} />
+                <MessageSquare size={18} />
                 Hire Me
               </a>
               <a 
                 href="#projects" 
-                className="btn btn-outline flex items-center justify-center gap-2 dark:text-white w-full sm:w-auto"
+                className="px-6 py-2 rounded-md transition-all duration-300 font-medium border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 flex items-center justify-center gap-2 dark:text-white w-full sm:w-auto"
               >
                 View Projects
               </a>
               <a 
                 href="/Ankit_Raj-Resume.pdf"
                 download="Ankit_Raj-Resume.pdf"
-                className="btn btn-outline flex items-center justify-center gap-2 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20 w-full sm:w-auto"
+                className="px-6 py-2 rounded-md transition-all duration-300 font-medium border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 flex items-center justify-center gap-2 dark:text-white hover:bg-blue-50 dark:hover:bg-blue-900/20 w-full sm:w-auto"
               >
                 <Download size={18} />
                 Download Resume

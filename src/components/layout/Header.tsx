@@ -48,13 +48,11 @@ const Header: React.FC = () => {
     setTimeout(() => {
       const element = document.querySelector(href);
       if (element) {
-        console.log('Scrolling to:', href, element);
         element.scrollIntoView({ 
           behavior: 'smooth',
           block: 'start'
         });
       } else {
-        console.log('Element not found:', href);
         // Fallback: try to scroll to the top if home
         if (href === '#home') {
           window.scrollTo({ top: 0, behavior: 'smooth' });

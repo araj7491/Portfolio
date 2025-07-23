@@ -72,7 +72,7 @@ const BlogSection: React.FC = () => {
               <motion.div
                 key={post.id}
                 variants={itemVariants}
-                className="card bg-white dark:bg-slate-800 group cursor-pointer"
+                className="rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl bg-white dark:bg-slate-800 group cursor-pointer"
                 onClick={() => setSelectedPost(post)}
               >
                 <div className="relative h-48 overflow-hidden">

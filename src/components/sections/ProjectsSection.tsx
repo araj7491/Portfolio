@@ -69,7 +69,7 @@ const ProjectsSection: React.FC = () => {
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="card group bg-white dark:bg-slate-800"
+              className="rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl group bg-white dark:bg-slate-800"
             >
               <div className="relative overflow-hidden h-48 md:h-64">
                 <div className="absolute inset-0 bg-blue-900/20 group-hover:bg-blue-900/10 transition-all duration-300 z-10"></div>

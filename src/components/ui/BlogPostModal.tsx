@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Clock, Calendar, User } from 'lucide-react';
+import { X, Clock, Calendar } from 'lucide-react';
 import { BlogPost } from '../../data/blogPosts';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';

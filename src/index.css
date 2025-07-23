@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: 37 99 235; /* blue-600 */
-  --secondary: 20 184 166; /* teal-500 */
-  --accent: 249 115 22; /* orange-500 */
-  --success: 34 197 94; /* green-500 */
-  --warning: 234 179 8; /* yellow-500 */
-  --error: 239 68 68; /* red-500 */
-}
+
 
 html {
   scroll-behavior: smooth;
@@ -82,37 +75,9 @@ h1, h2, h3, h4, h5, h6 {
   @apply text-lg md:text-xl text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto mb-12;
 }
 
-/* Button styles */
-.btn {
-  @apply px-6 py-2 rounded-md transition-all duration-300 font-medium;
-}
 
-.btn-primary {
-  @apply bg-blue-600 hover:bg-blue-700 text-white;
-}
 
-.btn-secondary {
-  @apply bg-teal-500 hover:bg-teal-600 text-white;
-}
 
-.btn-outline {
-  @apply border border-slate-300 dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500;
-}
-
-/* Card styles */
-.card {
-  @apply rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl;
-}
-
-/* Marquee text for skills */
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-marquee {
-  animation: marquee 30s linear infinite;
-}
 
 /* TypeWriter effect */
 @keyframes blink {

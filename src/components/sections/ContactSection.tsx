@@ -436,7 +436,7 @@ const ContactSection: React.FC = () => {
                   <button
                     type="submit"
                     disabled={loading}
-                    className={`btn btn-primary w-full flex items-center justify-center gap-2 ${
+                    className={`px-6 py-2 rounded-md transition-all duration-300 font-medium bg-blue-600 hover:bg-blue-700 text-white w-full flex items-center justify-center gap-2 ${
                       loading ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
