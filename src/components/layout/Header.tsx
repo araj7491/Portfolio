@@ -18,6 +18,24 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle click outside to close mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (mobileMenuOpen && !target.closest('header')) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    if (mobileMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [mobileMenuOpen]);
+
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'Projects', href: '#projects' },
@@ -25,17 +43,41 @@ const Header: React.FC = () => {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const handleNavigation = (href: string) => {
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        console.log('Scrolling to:', href, element);
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        console.log('Element not found:', href);
+        // Fallback: try to scroll to the top if home
+        if (href === '#home') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+    }, 100);
+  };
+
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 px-4 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'py-3 glass shadow-sm' : 'py-5 bg-transparent'
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="w-full px-4 flex justify-between items-center">
         {/* Logo */}
         <a 
           href="#home" 
-          className="font-bold text-xl md:text-2xl text-slate-900 dark:text-white"
+          onClick={(e) => {
+            e.preventDefault();
+            handleNavigation('#home');
+          }}
+          className="font-bold text-xl md:text-2xl text-slate-900 dark:text-white cursor-pointer"
         >
           <span className="text-blue-600">A</span>nkit<span className="text-blue-600">.</span>
         </a>
@@ -46,7 +88,11 @@ const Header: React.FC = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation(item.href);
+              }}
+              className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors cursor-pointer"
             >
               {item.name}
             </a>
@@ -84,15 +130,18 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-full left-0 right-0 glass py-4 px-4 shadow-lg"
+            className="md:hidden absolute top-full left-0 right-0 glass py-4 px-4 shadow-lg z-50"
           >
             <nav className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation(item.href);
+                  }}
+                  className="text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors px-4 py-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
                 >
                   {item.name}
                 </a>

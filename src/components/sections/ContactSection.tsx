@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, Mail, MessageSquare, MapPin, Check, AlertTriangle, Github, Linkedin, Download } from 'lucide-react';
+import { Send, Mail, MessageSquare, MapPin, Check, AlertTriangle, Github, Linkedin } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import { EMAILJS_CONFIG } from '../../config/emailjs';
 
 interface FormData {
   name: string;
@@ -51,6 +52,11 @@ const ContactSection: React.FC = () => {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  // Initialize EmailJS
+  useEffect(() => {
+    emailjs.init(EMAILJS_CONFIG.USER_ID);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -124,13 +130,31 @@ const ContactSection: React.FC = () => {
     setLoading(true);
     
     try {
-      // This is just a mockup for EmailJS integration
-      // In a real application, you'd configure EmailJS with your service ID, template ID, and user ID
+      // Check if EmailJS is properly configured
+      if (EMAILJS_CONFIG.SERVICE_ID === 'YOUR_SERVICE_ID' || 
+          EMAILJS_CONFIG.TEMPLATE_ID === 'YOUR_TEMPLATE_ID' || 
+          EMAILJS_CONFIG.USER_ID === 'YOUR_USER_ID') {
+        throw new Error('EmailJS not configured');
+      }
+
+      // EmailJS configuration
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        time: new Date().toLocaleString(),
+        to_email: 'araj7491@gmail.com'
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.USER_ID
+      );
       
-      // Mock EmailJS sending for demo purposes
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-      
-      // For demo purposes, we'll just show success
       setStatus({
         submitted: true,
         success: true,
@@ -145,11 +169,22 @@ const ContactSection: React.FC = () => {
         message: ''
       });
     } catch (error) {
-      setStatus({
-        submitted: true,
-        success: false,
-        message: 'There was an error sending your message. Please try again.'
-      });
+      console.error('EmailJS Error:', error);
+      
+      // Check if it's a configuration error
+      if (error instanceof Error && error.message === 'EmailJS not configured') {
+        setStatus({
+          submitted: true,
+          success: false,
+          message: 'Email service not configured. Please check the setup guide in EMAILJS_SETUP.md'
+        });
+      } else {
+        setStatus({
+          submitted: true,
+          success: false,
+          message: 'There was an error sending your message. Please try again.'
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -262,13 +297,15 @@ const ContactSection: React.FC = () => {
                     <Linkedin size={20} />
                   </a>
                   <a 
-                    href="/Ankit_Raj-Resume.pdf"
-                    download="Ankit_Raj-Resume.pdf"
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-200 dark:bg-slate-700 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                    aria-label="Download Resume"
+                    href="https://x.com/ankitraj0707" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="X (Twitter)"
+                    className="p-3 bg-slate-200 dark:bg-slate-700 rounded-full text-slate-700 dark:text-slate-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
-                    <Download size={18} />
-                    Resume
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
                   </a>
                 </div>
               </div>
@@ -423,7 +460,9 @@ const ContactSection: React.FC = () => {
               
               <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
                 <p className="text-sm text-blue-800 dark:text-blue-200">
-                  <span className="font-medium">*</span> I typically respond to messages within 24-48 hours. For urgent inquiries, please mention "Urgent" in the subject line.
+                  <span className="flex flex-col items-center text-center">
+                    I typically respond to messages within 24 hours. For urgent inquiries, please mention "Urgent" in the subject line.
+                  </span>
                 </p>
               </div>
             </div>
