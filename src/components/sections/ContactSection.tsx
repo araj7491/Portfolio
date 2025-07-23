@@ -137,23 +137,50 @@ const ContactSection: React.FC = () => {
         throw new Error('EmailJS not configured');
       }
 
-      // EmailJS configuration
-      const templateParams = {
+      const currentTime = new Date().toLocaleString();
+
+      // Main email template parameters (to you)
+      const mainEmailParams = {
         name: formData.name,
         email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        time: new Date().toLocaleString(),
+        time: currentTime,
         to_email: 'araj7491@gmail.com'
       };
 
-      // Send email using EmailJS
+      // Auto-reply template parameters (to the sender)
+      const autoReplyParams = {
+        to_name: formData.name,
+        to_email: formData.email,
+        sender_name: 'Ankit Raj',
+        sender_email: 'araj7491@gmail.com',
+        time: currentTime,
+        original_subject: formData.subject
+      };
+
+      // Send main email to you
       await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
+        mainEmailParams,
         EMAILJS_CONFIG.USER_ID
       );
+
+      // Send auto-reply to the sender (only if template is configured)
+      if (EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID && EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID !== 'template_auto_reply') {
+        try {
+          await emailjs.send(
+            EMAILJS_CONFIG.SERVICE_ID,
+            EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID,
+            autoReplyParams,
+            EMAILJS_CONFIG.USER_ID
+          );
+        } catch (autoReplyError) {
+          console.warn('Auto-reply failed, but main email was sent:', autoReplyError);
+          // Don't fail the entire submission if auto-reply fails
+        }
+      }
       
       setStatus({
         submitted: true,

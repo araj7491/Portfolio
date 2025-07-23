@@ -110,14 +110,30 @@ const Header: React.FC = () => {
           </button>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Controls */}
+        <div className="md:hidden flex items-center space-x-2">
+          {/* Theme Toggle */}
+          <button 
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+            className="p-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+          >
+            {theme === 'light' ? (
+              <Moon size={20} className="text-slate-700" />
+            ) : (
+              <Sun size={20} className="text-slate-300" />
+            )}
+          </button>
+          
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-md text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -145,21 +161,7 @@ const Header: React.FC = () => {
                 </a>
               ))}
               
-              <div className="flex items-center justify-end px-4 pt-2 border-t border-slate-200 dark:border-slate-700">
-                
-                {/* Theme Toggle */}
-                <button 
-                  onClick={toggleTheme}
-                  aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-                  className="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-                >
-                  {theme === 'light' ? (
-                    <Moon size={20} className="text-slate-700" />
-                  ) : (
-                    <Sun size={20} className="text-slate-300" />
-                  )}
-                </button>
-              </div>
+
             </nav>
           </motion.div>
         )}
